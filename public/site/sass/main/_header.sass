@@ -1,0 +1,169 @@
+.activepopups
+  display: block !important
+  animation-name: popups
+  -webkit-animation-name: popups
+  -moz-animation-name: popups
+  -ms-animation-name: popups
+  -o-animation-name: popups
+  animation-delay: .2s
+  -webkit-animation-delay: .2s
+  -moz-animation-delay: .2s
+  -ms-animation-delay: .2s
+  -o-animation-delay: .2s
+  animation-duration: .3s
+  -webkit-animation-duration: .3s
+  -moz-animation-duration: .3s
+  -ms-animation-duration: .3s
+  -o-animation-duration: .3s
+  visibility: hidden
+  animation-fill-mode: forwards
+  -webkit-animation-fill-mode: forwards
+  -moz-animation-fill-mode: forwards
+  -ms-animation-fill-mode: forwards
+  -o-animation-fill-mode: forwards
+  animation-timing-function: ease-in
+  -webkit-animation-timing-function: ease-in
+  -moz-animation-timing-function: ease-in
+  -ms-animation-timing-function: ease-in
+  -o-animation-timing-function: ease-in
+
+@keyframes popups
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+.popups
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  margin: auto
+  position: fixed
+  background-color: rgba(0, 0, 0, 0.94)
+  overflow-y: scroll
+  z-index: 1000
+  &__signup, &__forget-password
+    display: none
+  &__label
+    color: #656565
+  &__input, &__select
+    background-color: #f0f1f3
+    border-radius: 0
+    padding: 15px
+  & button
+    background-color: $secondryColor
+    +corners(50px)
+  &__close
+
+    & img
+      height: 30px
+      cursor: pointer
+  & .subscribe__containers__title
+    background-color: transparent
+  &__line
+    border-top: 3px solid $primaryColor
+    margin: 0px auto
+    padding-bottom: 19px
+    width: 50px
+  &__list ul
+    border: 2px solid $lightGrayColor
+  &__list li:hover
+    background-color: #212121
+  &__list a
+    +corners(0 !important)
+    color: $white
+  &__active
+    background-color: $primaryColor !important
+  &__student, &__professional, &__signing, &__reset-password
+    background-color: $white
+    &:before
+      content: ''
+      float: left
+      margin-top: -54px
+      border-top: 15px solid transparent
+      border-left: 15px solid transparent
+      border-bottom: 15px solid $white
+      border-right: 15px solid transparent
+  &__professional
+    display: none
+    &:before
+      float: right
+  &__signing:before, &__reset-password:before
+    display: none
+
+.fullscreen
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  height: 760px !important
+  background-color: $backColor1
+  &__img
+    background-image: url("../images/slideshow-background.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    opacity: .5
+
+.header
+  height: 120px
+  & a
+    text-decoration: none !important
+    list-style: none !important
+  &__logo img
+    position: absolute
+    top: -50px
+    height: 150px
+    width: 150px
+    left: 0
+    right: 0
+    margin: auto
+  &__img
+    height: 16px
+    margin-top: -4px
+  &__bar, &__nav
+    height: 60px
+    &__btn
+      background: $primaryColor
+      position: relative
+      color: $white
+      +corners(40px)
+      height: 40px
+      & span
+        color: $white !important
+      &:hover
+        background-color: #e88f46
+    &__nav__link
+      color: $primaryColor
+  &__nav
+    &__list
+      &:hover .header__nav__list-line
+        width: 70% !important
+        opacity: 1
+    &__link
+      color: $white !important
+    &__img
+      height: 25px
+      margin-top: -6px
+    &__list-line
+      width: 15px
+      border-top: 2px solid #cc7834
+      opacity: .5
+      -webkit-transition: all .2s ease-in
+      -moz-transition: all .2s ease-in
+      -ms-transition: all .2s ease-in
+      -o-transition: all .2s ease-in
+      transition: all .2s ease-in
+  .nav-responsive
+    display: none
+    left: 15px
+    right: 15px
+
+

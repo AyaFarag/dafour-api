@@ -1,0 +1,38 @@
+.ms-partialview-template {
+    overflow: hidden;
+    min-height: 570px;
+    position: absolute !important;
+    top: 150px;
+    width: 100%;
+}
+
+.ms-partialview-template .ms-view {
+    overflow: visible;
+    background-color: transparent;
+}
+
+.ms-partialview-template .ms-caro3d-template {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 40px 15%;
+}
+
+.ms-partialview-template .ms-slide-info {
+    text-align: center;
+    margin-top: 0px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+}
+
+.ms-partialview-template .ms-slide-info h3 {
+    margin: 5px;
+    color: #fff;
+}
+
+.ms-partialview-template .ms-slide-info p {
+    margin: 6px;
+    color: #e4e4e4;
+}	
+

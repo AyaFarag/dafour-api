@@ -1,0 +1,115 @@
+=input($backColor, $height, $width, $textColor)
+  background: $backColor
+  height: $height
+  width: $width
+  color: $textColor
+
+=corners($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  -o-border-radius:     $radius
+  border-radius:         $radius
+
+=border($top, $left, $bottom, $right, $color, $style)
+  border-top: $top
+  border-left: $left
+  border-right: $right
+  border-bottom: $bottom
+  border-color: $color
+  border-style: $style
+
+=textDetails($color, $weight, $size)
+  color: $color
+  font-weight: $weight
+  font-size: $size
+
+=pad0()
+  padding: 0
+
+=pad5()
+  padding-left: 5px
+  padding-right: 5px
+  padding-top: 5px
+  padding-bottom: 5px
+
+=pad10()
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 10px
+  padding-bottom: 10px
+
+=marg0()
+  margin: 0
+
+=marg5()
+  padding-left: 5px
+  padding-right: 5px
+  padding-top: 5px
+  padding-bottom: 5px
+
+=marg10()
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 10px
+  padding-bottom: 10px
+
+=mainWidth()
+  width: 90%
+  margin: 0 auto
+  display: block
+=transition($duration, $property, $timing)
+  transition-duration: $duration
+  -webkit-transition-duration: $duration
+  -moz-transition-duration: $duration
+  -o-transition-duration: $duration
+  -ms-transition-duration: $duration
+  transition-property: $property
+  -webkit-transition-property: $property
+  -moz-transition-property: $property
+  -o-transition-property: $property
+  -ms-transition-property: $property
+  transition-timing-function: $timing
+  -webkit-transition-timing-function: $timing
+  -moz-transition-timing-function: $timing
+  -o-transition-timing-function: $timing
+  -ms-transition-timing-function: $timing
+
+=transformTranslate($horizintal, $vertical)
+  transform: translate($horizintal, $vertical)
+  -webkit-transform: translate($horizintal, $vertical)
+  -moz-transform: translate($horizintal, $vertical)
+  -o-transform: translate($horizintal, $vertical)
+  -ms-transform: translate($horizintal, $vertical)
+
+=transformRotate($deg)
+  transform: rotate($deg)
+  -webkit-transform: rotate($deg)
+  -moz-transform: rotate($deg)
+  -o-transform: rotate($deg)
+  -ms-transform: rotate($deg)
+
+=transformScale($sValue)
+  transform: scale($sValue)
+  -webkit-transform: scale($sValue)
+  -moz-transform: scale($sValue)
+  -o-transform: scale($sValue)
+  -ms-transform: scale($sValue)
+
+=boxShadow($horizontal, $vertical, $blur, $spread, $color)
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color
+  -moz-box-shadow: $horizontal $vertical $blur $spread $color
+  -ms-box-shadow: $horizontal $vertical $blur $spread $color
+  -o-box-shadow: $horizontal $vertical $blur $spread $color
+  box-shadow: $horizontal, $vertical, $blur, $spread, $color
+
+=borderGradRed()
+  background: rgb(229,57,53)
+  background: -moz-linear-gradient(left, rgba(229,57,53,1) 1%, rgba(183,28,28,1) 100%) /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(229,57,53,1) 1%,rgba(183,28,28,1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(229,57,53,1) 1%,rgba(183,28,28,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53935', endColorstr='#b71c1c',GradientType=1 ) /* IE6-9 */
+
+=element($element)
+  &-#{$element}
+    @content

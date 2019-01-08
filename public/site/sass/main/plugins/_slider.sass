@@ -1,0 +1,490 @@
+/**
+ *  Master Slider
+ *	version 1.5
+ * 	Core css file
+
+.master-slider
+  position: relative
+  visibility: hidden
+  -moz-transform: translate3d(0, 0, 0)
+  &.ms-fullheight
+    height: 100%
+  &.before-init
+    img
+      max-width: none
+
+.ms-ie img
+  border: none
+
+.ms-ie8 *
+  opacity: inherit
+  filter: inherit
+
+.ms-ie7
+  zoom: 1
+
+.ms-loading-container
+  position: absolute
+  width: 100%
+  top: 0
+  .ms-loading
+    width: 36px
+    height: 36px
+    background: url(../images/style/loading-2.gif) no-repeat center white
+    border-radius: 60px
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
+    position: absolute
+    left: 50%
+    top: 50%
+    margin: -18px
+    opacity: 0.9
+
+.ms-slide .ms-slide-loading
+  width: 36px
+  height: 36px
+  background: url(../images/style/loading-2.gif) no-repeat center white
+  border-radius: 60px
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
+  position: absolute
+  left: 50%
+  top: 50%
+  margin: -18px
+  opacity: 0.9
+
+/* grab cursor
+
+.ms-def-cursor
+  cursor: auto !important
+
+.ms-grab-cursor
+  cursor: url("../images/style/grab.png"), move
+
+.ms-grabbing-cursor
+  cursor: url("../images/style/grabbing.png"), move
+
+.ms-ie
+  .ms-grab-cursor
+    cursor: url("../images/style/grab.cur"), move
+  .ms-grabbing-cursor
+    cursor: url("../images/style/grabbing.cur"), move
+
+.ms-view
+  margin: 0px auto
+  overflow: hidden
+  background: black
+  position: relative
+  -webkit-perspective: 2000px
+  -moz-perspective: 2000px
+  -ms-perspective: 2000px
+  perspective: 2000px
+  .ms-slide-container
+    position: relative
+
+.ms-slide
+  position: absolute
+  -webkit-transform: translateZ(0px)
+  -moz-transform: translateZ(0px)
+  -ms-transform: translateZ(0px)
+  -o-transform: translateZ(0px)
+  transform: translateZ(0px)
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  -ms-transform-style: preserve-3d
+  transform-style: preserve-3d
+  height: 100%
+  &.selected
+    .ms-slide-bgcont
+      position: absolute
+      overflow: hidden
+      width: 100%
+    .ms-slide-bgvideocont
+      position: absolute
+      overflow: hidden
+      width: 100%
+      z-index: 5
+      height: 100%
+      -webkit-transform: translateZ(0.3px)
+      -moz-transform: translateZ(0.3px)
+      -ms-transform: translateZ(0.3px)
+      -o-transform: translateZ(0.3px)
+      transform: translateZ(0.3px)
+
+.ms-slide-bgvideocont > video
+  -webkit-transform: translateZ(0.3px)
+  -moz-transform: translateZ(0.3px)
+  -ms-transform: translateZ(0.3px)
+  -o-transform: translateZ(0.3px)
+  transform: translateZ(0.3px)
+
+.ms-slide .ms-slide-bgvideo
+  position: absolute
+  top: 0px
+
+.ms-container
+  position: relative
+  margin: 0 auto
+
+.ms-slide .ms-slide-bgcont img, .ms-container
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.ms-slide
+  .ms-layer
+    position: absolute
+  .ms-slide-layers
+    position: absolute
+    overflow: hidden
+    width: 100%
+    height: 100%
+    z-index: 10
+    top: 0px
+  .ms-slide-video
+    position: absolute
+    top: 0
+    z-index: 11
+    background: black
+    padding: 0
+    margin: 0
+    border: none
+
+.ms-layer.video-box
+  background: black
+  iframe
+    padding: 0
+    margin: 0
+    border: none
+    position: absolute
+    z-index: 10
+
+.ms-slide
+  .ms-slide-vpbtn, .ms-video-btn
+    position: absolute
+    cursor: pointer
+    z-index: 10
+  .ms-slide-vcbtn
+    position: absolute
+    cursor: pointer
+    z-index: 13
+
+.ms-slide-vcbtn-mobile
+  position: relative
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 28px
+  background-color: black
+  color: white
+  text-align: center
+  cursor: pointer
+  z-index: 13
+  .ms-vcbtn-txt
+    text-transform: uppercase
+    font-family: sans-serif
+    font-size: 0.75em
+    display: inline-block
+    background: url(../images/style/video-close-btn.png) no-repeat 0px 3px
+    padding-left: 15px
+    height: 15px
+    color: #DBDBDB
+    margin-top: 7px
+
+.ms-slide
+  .ms-slide-vcbtn, .ms-slide-layers, .ms-slide-vpbtn, .ms-slide-video
+    -webkit-transform: translateZ(0.44px)
+    -moz-transform: translateZ(0.44px)
+    -ms-transform: translateZ(0.44px)
+    -o-transform: translateZ(0.44px)
+    transform: translateZ(0.44px)
+
+.ms-video-img
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+.ms-mask-frame
+  overflow: hidden
+  position: absolute
+  float: left
+
+/* controls
+
+.ms-thumb-list
+  overflow: hidden
+  position: absolute
+
+.ms-thumbs-cont
+  position: relative
+
+.ms-thumb-frame
+  img
+    width: 100%
+    height: auto
+  cursor: pointer
+  float: left
+  overflow: hidden
+
+.ms-bullet
+  cursor: pointer
+  float: left
+
+.ms-sbar .ms-bar
+  position: relative
+  -webkit-transition: opacity 300ms
+  -moz-transition: opacity 300ms
+  -ms-transition: opacity 300ms
+  -o-transition: opacity 300ms
+  transition: opacity 300ms
+
+.ms-time-bar
+  -webkit-transition: width 120ms linear
+  -moz-transition: width 120ms linear
+  -ms-transition: width 120ms linear
+  -o-transition: width 120ms linear
+  transition: width 120ms linear
+
+.ms-ie7 .ms-tooltip-arrow
+  height: 0px
+
+.ms-partialview-template
+  overflow: hidden
+  min-height: 570px
+  position: absolute !important
+  top: 150px
+  width: 100%
+  .ms-view
+    overflow: visible
+    background-color: transparent
+  .ms-caro3d-template
+    overflow: hidden
+    margin: 0 auto
+    padding: 40px 15%
+  .ms-slide-info
+    text-align: center
+    margin-top: 0px
+    max-width: 760px
+    margin: 0 auto
+    text-align: center
+    padding: 15px
+    h3
+      margin: 5px
+      color: #fff
+    p
+      margin: 6px
+      color: #e4e4e4
+
+/**
+ *  Master Slider
+ *  Default Skin
+
+.ms-skin-default
+  .ms-slide .ms-slide-vpbtn, .ms-video-btn
+    width: 50px
+    height: 51px
+    background: url(../images/skins/default/light-skin-1.png) no-repeat -14px -150px
+    top: 50%
+    left: 50%
+    margin: -25px 0 0 -25px
+  .ms-slide .ms-slide-vcbtn
+    width: 30px
+    height: 30px
+    background: url(../images/skins/default/light-skin-1.png) no-repeat -24px -28px
+    top: 18px
+    right: 30px
+  .ms-nav-next, .ms-nav-prev
+    width: 30px
+    background: url(../images/skins/default/light-skin-1.png)
+    background-position: -89px -26px
+    height: 40px
+    cursor: pointer
+    top: 50%
+    left: 30px
+    margin-top: -20px
+    position: absolute
+    z-index: 10
+  .ms-nav-next
+    right: 30px
+    left: auto
+    background-position: -89px -103px
+  .ms-thumb-frame-selected
+    opacity: 0.6
+  .ms-thumb-list
+    &.ms-dir-h
+      bottom: -60px
+      width: 100%
+      height: 60px
+    &.ms-dir-v
+      height: 100%
+      width: 60px
+      right: -60px
+      top: 0
+  .ms-thumb-frame
+    cursor: pointer
+    float: left
+    width: 60px
+    height: 60px
+    margin: 1px 0 0 1px
+    overflow: hidden
+  .ms-bullets.ms-dir-h
+    position: absolute
+    bottom: 20px
+    right: 50%
+    width: 100px
+    .ms-bullets-count
+      position: relative
+      right: -50%
+  .ms-bullet
+    width: 10px
+    height: 10px
+    background: url(../images/skins/default/light-skin-1.png) no-repeat
+    margin: 4px
+    background-position: -34px -117px
+  .ms-bullet-selected
+    background-position: -34px -84px
+  .ms-sbar
+    position: absolute
+    &.ms-dir-h
+      left: 10px
+      right: 10px
+      top: 5px
+    &.ms-dir-v
+      top: 10px
+      bottom: 10px
+      right: 5px
+    .ms-bar
+      height: 4px
+      background: #DD00FF
+      border-radius: 4px
+    &.ms-dir-v .ms-bar
+      width: 4px
+  .ms-timerbar
+    width: 100%
+    bottom: 0px
+    position: absolute
+  .ms-time-bar
+    height: 3px
+    background: #FFFFFF
+    border-top: solid 1px rgba(0, 0, 0, 0.41)
+  .ms-ctimer
+    position: absolute
+    top: 30px
+    left: 30px
+    cursor: pointer
+
+  .ms-tooltip
+    position: absolute
+    z-index: 110
+    cursor: auto
+  .ms-tooltip-top .ms-tooltip-arrow, .ms-tooltip-bottom .ms-tooltip-arrow
+    border-left: solid 10px transparent
+    border-right: solid 10px transparent
+    position: absolute
+    left: 50%
+    margin-left: -10px
+  .ms-tooltip-top .ms-tooltip-arrow
+    border-top: solid 10px
+    border-top-color: silver
+    border-top-color: rgba(240, 240, 240, 0.88)
+    bottom: -10px
+  .ms-tooltip-bottom .ms-tooltip-arrow
+    border-bottom: solid 10px
+    border-bottom-color: silver
+    border-bottom-color: rgba(240, 240, 240, 0.88)
+    top: -10px
+  .ms-tooltip-right .ms-tooltip-arrow, .ms-tooltip-left .ms-tooltip-arrow
+    border-top: solid 10px transparent
+    border-bottom: solid 10px transparent
+    position: absolute
+    top: 50%
+    margin-top: -10px
+  .ms-tooltip-right .ms-tooltip-arrow
+    border-right: solid 10px
+    border-right-color: silver
+    border-right-color: rgba(240, 240, 240, 0.88)
+    left: -10px
+  .ms-tooltip-left .ms-tooltip-arrow
+    border-left: solid 10px
+    border-left-color: silver
+    border-left-color: rgba(240, 240, 240, 0.88)
+    right: -10px
+  .ms-tooltip-point
+    cursor: pointer
+    .ms-point-center
+      width: 12px
+      height: 12px
+      border-radius: 15px
+      border: solid 2px #BBB
+      background: white
+      margin: -8px 0 0 -8px
+      position: absolute
+      z-index: 5
+    .ms-point-border
+      width: 22px
+      height: 22px
+      background: black
+      background: rgba(0, 0, 0, 0.36)
+      margin: -11px 0 0 -11px
+      position: absolute
+      border-radius: 15px
+      animation: point-anim 1.5s infinite
+      -moz-animation: point-anim 1.5s infinite
+      -webkit-animation: point-anim 1.5s infinite
+      -o-animation: point-anim 1.5s infinite
+
+/* controls
+
+@keyframes point-anim
+  0%
+    transform: scale(0.5)
+    -webkit-transform: scale(0.5)
+    -moz-transform: scale(0.5)
+    -o-transform: scale(0.5)
+    -ms-transform: scale(0.5)
+    opacity: 1
+
+  100%
+    transform: scale(0.5)
+    -webkit-transform: scale(0.5)
+    -moz-transform: scale(1.5)
+    -o-transform: scale(1.5)
+    -ms-transform: scale(1.5)
+    opacity: 0
+
+
+@-webkit-keyframes point-anim
+  0%
+    -webkit-transform: scale(0.5)
+    opacity: 1
+
+  100%
+    -webkit-transform: scale(1.5)
+    opacity: 0
+
+
+/* In Android browser, using css animations over slider causes some crashes
+
+.ms-android.ms-skin-default .ms-tooltip-point .ms-point-border
+  animation: none
+  -moz-animation: none
+  -webkit-animation: none
+  -o-animation: none
+
+.ms-skin-default
+  .ms-tooltip
+    max-width: 200px
+  .ms-tooltip-cont
+    padding: 10px
+    background: silver
+    background: rgba(240, 240, 240, 0.88)
+    text-shadow: 0 1px 0px white
+    margin-left: -1px
+
+/* retina
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  .ms-skin-default
+    .ms-slide .ms-slide-vpbtn, .ms-video-btn, .ms-slide .ms-slide-vcbtn, .ms-nav-next, .ms-nav-prev, .ms-bullet
+      background-image: url(../images/skins/default/light-skin-1-retina.png)
+      background-size: 152px 225px

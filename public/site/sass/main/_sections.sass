@@ -1,0 +1,226 @@
+.university-edu, .technical-edu
+  display: none
+
+.documents
+  background-color: $backColor2
+  &__search
+    height: 120px
+    +corners(30px)
+    +border(5px, 5px, 5px, 5px, $borderColor, solid)
+    margin-top: -60px !important
+    background-color: #232323
+    & input
+      background-image: url(../images/search.png)
+      background-position: 10px 12px
+      background-repeat: no-repeat
+      background-size: 25px
+    &__date-input
+      height: 50px
+      border-radius: 0
+      padding: 10px
+      width: 100%
+      color: $lightGrayColor
+      border: 1px solid #5d5d5d
+      background: #232121
+    & .firstselect
+      border-top-left-radius: 25px
+      border-bottom-left-radius: 25px
+  &__containers
+    &__title
+      color: $primaryColor
+      background: $backColor2
+      z-index: 1
+    &__border__title
+      width: 94%
+      border: 1px solid #cc7834
+      left: 0
+      right: 0
+      margin: auto
+      top: 72px
+      z-index: 0
+    &__tabs
+      &__list
+        border: 2px solid $lightGrayColor
+      &__list li:hover
+        background-color: #212121
+      &__list a
+        +corners(0 !important)
+        position: relative
+        color: $white !important
+        cursor: pointer
+
+      &__active
+        background-color: $primaryColor !important
+        &:after
+          content: ''
+          left: 0
+          right: 0
+          width: 17px
+          margin: 32px auto
+          position: absolute
+          border-top: 17px solid $white
+          border-left: 17px solid transparent
+          border-bottom: 17px solid transparent
+          border-right: 17px solid transparent
+    &__paper
+      background: #313131
+      padding: 15px
+      border: 1px solid #464646
+
+      &__title
+        color: $white
+      &__abstract
+        color: $lightGrayColor
+      &__details
+        border-bottom: 0.3px solid #353535
+        color: $lightGrayColor
+        &__name
+          color: #ffac6a
+        &__img
+          height: 25px
+        &__btn
+          background-color: $secondryColor
+          color: $white
+          &:hover
+            background: #074db3
+
+.subscribe
+  background-color: $backColor3
+  &__containers__title
+    @extend .documents__containers__title
+    background-color: $backColor3
+  &__details
+    & li
+      color: $primaryColor
+      background: transparent
+      border-radius: 0 !important
+      border-left: 0 !important
+      border-right: 0 !important
+      border-color: #525252
+      &:first-of-type
+        border-top: 0 !important
+      &:last-of-type
+        border-bottom: 0 !important
+    & b
+      +corners(30px)
+      height: 30px
+      width: 30px
+      +border(3px, 3px, 3px, 3px, $primaryColor, solid)
+      color: $primaryColor
+      margin-right: 10px
+
+  .package1
+    +corners(20px)
+    border-bottom-right-radius: 0
+    border-top-right-radius: 0
+  .package2
+    background-color: $white
+
+  .package3
+    +corners(20px)
+    border-bottom-left-radius: 0
+    border-top-left-radius: 0
+  &__package
+    height: 300px
+    background-color: $lightGrayColor
+    &__title
+      margin-top: -36px
+      height: 37px
+      &__p
+        left: 0
+        right: 0
+        z-index: 2
+        color: $white
+        line-height: 44px
+      &__img
+        width: 175px
+        left: 0
+        right: 0
+        z-index: 1
+        line-height: 44px
+    & li
+      color: $primaryColor
+      background: transparent
+      border-radius: 0 !important
+      border-left: 0 !important
+      border-right: 0 !important
+      border-color: #c5c5c5
+      height: 55px
+      &:first-of-type
+        border-top: 0 !important
+      &:last-of-type
+        border-bottom: 0 !important
+    & button
+      margin-top: -60px
+
+.reset-password, .profile
+  & ol li
+    border-color: #c1c1c1 !important
+    background: #dadada
+    border-radius: 2px
+    border: 2px solid
+  & .new-h4
+    background: transparent !important
+  & .fstMultipleMode .fstControls
+    border-radius: 0 !important
+    background: #f0f1f3
+    border: 1px solid #CCC !important
+    padding: 0
+  & .fstMultipleMode .fstQueryInputExpanded
+    padding: 15px
+    border-radius: 0 !important
+    margin: 0
+  & .fstChoiceItem
+    background: $white
+  & .fstResults
+    left: 6px
+    top: 99%
+    border: 1px solid #CCC
+    right: 6px
+  & .popups__signing
+    & .visa-cards
+      height: 55px
+.account-setting .documents__containers__paper
+  background: $white !important
+  border: none !important
+  & ul
+    color: #737373
+    border-bottom: 1px solid #eaeaea !important
+    &:last-of-type
+      border: 0 !important
+  & p, & h3
+    color: #737373 !important
+.profile .btn-reponsive
+  background: #4c4c4c !important
+.add-reference
+  cursor: pointer
+  color: #002a80 !important
+  text-decoration: underline !important
+.remove-reference
+  right: -12px
+  background: #ef4323
+  border-radius: 50px
+  padding: 5px
+  height: 30px
+  width: 30px
+  margin-top: 13px
+  cursor: pointer
+  display: none
+  z-index: 10000
+  & img
+    height: 100%
+    margin-top: -5px
+.blockinputs:hover .remove-reference
+  display: block
+.page-link
+  background: #404040
+  color: #FFF !important
+  border-color: #cc7834 !important
+  & img
+    height: 20px
+.page-item.disabled .page-link
+  background-color: #4a4a4a
+.page-link:focus, .page-link:hover
+  background: #cc7834 !important
+
+
